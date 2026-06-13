@@ -19,6 +19,25 @@
 
 <body>
 
+    <!-- ===================== PRELOADER ===================== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
+            </div>
+            <div class="preloader-terminal">
+                <div class="terminal-line" id="line1"></div>
+                <div class="terminal-line" id="line2"></div>
+                <div class="terminal-line" id="line3"></div>
+                <div class="terminal-line" id="line4"></div>
+            </div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar" id="preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================================== -->
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -239,34 +258,64 @@
 
             <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
                 <div class="project-card">
-                    <h4 class="fw-bold text-white mb-4"><span style="color: var(--accent-green)">@</span> Bina Nusantara
-                        Computer Club (BNCC)</h4>
+                    <h4 class="fw-bold text-white mb-1">
+                        <span style="color: var(--accent-green)">@</span> Bina Nusantara Computer Club
+                    </h4>
+                    <p class="text-dim mb-4" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem;">
+                        Malang, Indonesia &nbsp;·&nbsp; 2024 – Present
+                    </p>
 
-                    <div class="timeline-item">
-                        <h5 class="fw-bold mb-1">Staff Learning and Training</h5>
-                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Sep 2025 - Present |
-                            Malang, Indonesia</p>
-                    </div>
+                    <div class="tl-wrap">
 
-                    <div class="timeline-item">
-                        <h5 class="fw-bold mb-1">Activist Learning and Training</h5>
-                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Nov 2024 - Sep 2025 |
-                            Malang, Indonesia</p>
-                    </div>
+                        <!-- ① Current (top) -->
+                        <div class="tl-item">
+                            <div class="tl-marker tl-marker-active"></div>
+                            <div class="tl-body">
+                                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                                    <span class="tl-date">Sep 2025 – Present</span>
+                                    <span class="tl-badge-active">● Active</span>
+                                </div>
+                                <p class="tl-role">Staff Learning and Training</p>
+                                <p class="tl-meta">Malang, Indonesia</p>
+                            </div>
+                        </div>
 
-                    <div class="timeline-item">
-                        <h5 class="fw-bold mb-1">Member Backend Development</h5>
-                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Sep 2024 - Jun 2025 |
-                            Remote</p>
-                        <p class="text-dim small mt-2">Skills: Teamwork, Back-End Web Development</p>
-                    </div>
+                        <!-- ② -->
+                        <div class="tl-item">
+                            <div class="tl-marker"></div>
+                            <div class="tl-body">
+                                <div class="mb-1">
+                                    <span class="tl-date">Nov 2024 – Sep 2025</span>
+                                </div>
+                                <p class="tl-role">Activist Learning and Training</p>
+                                <p class="tl-meta">Malang, Indonesia</p>
+                            </div>
+                        </div>
 
-                    <div class="timeline-item border-0 mb-0">
-                        <h5 class="fw-bold mb-1">Technology Project Member</h5>
-                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Dec 2024 - Feb 2025 |
-                            Remote</p>
-                        <p class="text-dim small mt-2 mb-0">Skills: Back-End Web Development, Teamwork, Time Management
-                        </p>
+                        <!-- ③ -->
+                        <div class="tl-item">
+                            <div class="tl-marker"></div>
+                            <div class="tl-body">
+                                <div class="mb-1">
+                                    <span class="tl-date">Dec 2024 – Feb 2025</span>
+                                </div>
+                                <p class="tl-role">Technology Project Member</p>
+                                <p class="tl-meta">Remote &nbsp;·&nbsp; Back-End Web Dev, Teamwork, Time Management</p>
+                            </div>
+                        </div>
+
+                        <!-- ④ Oldest (bottom) -->
+                        <div class="tl-item tl-item-last">
+                            <div class="tl-marker"></div>
+                            <div class="tl-body">
+                                <div class="mb-1">
+                                    <span class="tl-date">Sep 2024 – Jun 2025</span>
+                                </div>
+                                <p class="tl-role">Member Backend Development</p>
+                                <p class="tl-meta">Remote &nbsp;·&nbsp; Teamwork, Back-End Web Development</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -389,6 +438,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
     <script>
+        /* ============================================================
+           PRELOADER — terminal boot sequence
+           ============================================================ */
+        (function () {
+            const preloader = document.getElementById('preloader');
+            const bar = document.getElementById('preloader-bar');
+
+            // Terminal messages to type out
+            const messages = [
+                { el: 'line1', html: '<span class="prompt">$</span><span class="cmd"> boot portfolio.sh</span>' },
+                { el: 'line2', html: '<span class="prompt">✓</span><span class="success"> modules loaded &nbsp;&mdash;&nbsp; OK</span>' },
+                { el: 'line3', html: '<span class="prompt">✓</span><span class="success"> assets fetched &nbsp;&mdash;&nbsp; OK</span>' },
+                { el: 'line4', html: '<span class="prompt">→</span> <span class="warn">Launching &lt;paruk.dev /&gt;...</span>' },
+            ];
+
+            let barPct = 0;
+            let barTimer = null;
+
+            // Smoothly animate the progress bar to a target %
+            function animateBar(target, duration) {
+                const start = barPct;
+                const distance = target - start;
+                const steps = Math.round(duration / 16);
+                let step = 0;
+                clearInterval(barTimer);
+                barTimer = setInterval(() => {
+                    step++;
+                    barPct = start + distance * (step / steps);
+                    bar.style.width = barPct + '%';
+                    if (step >= steps) { barPct = target; clearInterval(barTimer); }
+                }, 16);
+            }
+
+            // Type a line character by character, then resolve
+            function typeLine(id, html, speed) {
+                return new Promise(resolve => {
+                    const el = document.getElementById(id);
+                    const plain = html.replace(/<[^>]+>/g, ''); // strip tags for typing
+                    let i = 0;
+                    el.innerHTML = '';
+                    const iv = setInterval(() => {
+                        i++;
+                        // Show partial plain text then full HTML when done
+                        if (i < plain.length) {
+                            el.textContent = plain.substring(0, i);
+                        } else {
+                            el.innerHTML = html;
+                            clearInterval(iv);
+                            resolve();
+                        }
+                    }, speed);
+                });
+            }
+
+            async function runSequence() {
+                animateBar(20, 300);
+
+                await typeLine(messages[0].el, messages[0].html, 38);
+                await new Promise(r => setTimeout(r, 180));
+                animateBar(50, 350);
+
+                await typeLine(messages[1].el, messages[1].html, 28);
+                await new Promise(r => setTimeout(r, 120));
+                animateBar(72, 250);
+
+                await typeLine(messages[2].el, messages[2].html, 28);
+                await new Promise(r => setTimeout(r, 120));
+                animateBar(90, 200);
+
+                await typeLine(messages[3].el, messages[3].html, 32);
+                await new Promise(r => setTimeout(r, 250));
+                animateBar(100, 180);
+
+                // Wait for bar to finish, then fade out
+                await new Promise(r => setTimeout(r, 500));
+                preloader.classList.add('hidden');
+
+                // Remove from DOM after transition ends
+                preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+            }
+
+            runSequence();
+        })();
+
+        /* ============================================================
+           MAIN INIT — runs after preloader (AOS, Typed, VanillaTilt)
+           ============================================================ */
         AOS.init({ once: true, offset: 50, duration: 800 });
 
         new Typed('#typed-output', {

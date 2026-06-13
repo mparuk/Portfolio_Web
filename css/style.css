@@ -14,6 +14,96 @@ body {
     overflow-x: hidden;
 }
 
+/* =============================================
+   PRELOADER
+   ============================================= */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #020202;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(420px, 90vw);
+}
+
+.preloader-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    color: #fff;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+/* Reuse global glitch animation on preloader logo */
+.preloader-logo .glitch {
+    color: #fff;
+}
+
+.preloader-terminal {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.terminal-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.72rem, 2.5vw, 0.88rem);
+    color: var(--text-dim);
+    line-height: 1.9;
+    min-height: 1.9em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.terminal-line .prompt {
+    color: var(--accent-green);
+    margin-right: 8px;
+}
+
+.terminal-line .success {
+    color: var(--accent-green);
+}
+
+.terminal-line .warn {
+    color: #f0c040;
+}
+
+.terminal-line .cmd {
+    color: #fff;
+}
+
+.preloader-bar-wrap {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.preloader-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
+    border-radius: 2px;
+    transition: width 0.05s linear;
+    box-shadow: 0 0 10px rgba(10, 255, 96, 0.5);
+}
+
 /* --- GLITCH LOGO STYLE --- */
 .glitch-wrapper {
     font-family: 'JetBrains Mono', monospace;
@@ -54,21 +144,55 @@ body {
 }
 
 @keyframes glitch-anim-1 {
-    0%   { clip: rect(30px, 9999px, 10px, 0); }
-    20%  { clip: rect(80px, 9999px, 90px, 0); }
-    40%  { clip: rect(10px, 9999px, 50px, 0); }
-    60%  { clip: rect(40px, 9999px, 20px, 0); }
-    80%  { clip: rect(70px, 9999px, 100px, 0); }
-    100% { clip: rect(20px, 9999px, 60px, 0); }
+    0% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    20% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+
+    40% {
+        clip: rect(10px, 9999px, 50px, 0);
+    }
+
+    60% {
+        clip: rect(40px, 9999px, 20px, 0);
+    }
+
+    80% {
+        clip: rect(70px, 9999px, 100px, 0);
+    }
+
+    100% {
+        clip: rect(20px, 9999px, 60px, 0);
+    }
 }
 
 @keyframes glitch-anim-2 {
-    0%   { clip: rect(60px, 9999px, 70px, 0); }
-    20%  { clip: rect(10px, 9999px, 20px, 0); }
-    40%  { clip: rect(90px, 9999px, 30px, 0); }
-    60%  { clip: rect(30px, 9999px, 50px, 0); }
-    80%  { clip: rect(50px, 9999px, 10px, 0); }
-    100% { clip: rect(20px, 9999px, 40px, 0); }
+    0% {
+        clip: rect(60px, 9999px, 70px, 0);
+    }
+
+    20% {
+        clip: rect(10px, 9999px, 20px, 0);
+    }
+
+    40% {
+        clip: rect(90px, 9999px, 30px, 0);
+    }
+
+    60% {
+        clip: rect(30px, 9999px, 50px, 0);
+    }
+
+    80% {
+        clip: rect(50px, 9999px, 10px, 0);
+    }
+
+    100% {
+        clip: rect(20px, 9999px, 40px, 0);
+    }
 }
 
 /* Navbar */
@@ -177,7 +301,9 @@ body {
 }
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* --- TECH MARQUEE --- */
@@ -208,8 +334,13 @@ body {
 }
 
 @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Project & Experience Cards */
@@ -285,11 +416,30 @@ body {
     transform: scale(1.1);
 }
 
-.bento-item-1 { grid-column: span 2; grid-row: span 2; }
-.bento-item-2 { grid-column: span 2; grid-row: span 1; }
-.bento-item-3 { grid-column: span 1; grid-row: span 1; }
-.bento-item-4 { grid-column: span 1; grid-row: span 1; }
-.bento-item-5 { grid-column: span 4; grid-row: span 1; }
+.bento-item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-item-2 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-item-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-item-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-item-5 {
+    grid-column: span 4;
+    grid-row: span 1;
+}
 
 /* Experience Timeline Style */
 .timeline-item {
@@ -400,8 +550,10 @@ body {
 
 /* --- Small tablet / Large mobile (max 768px) --- */
 @media (max-width: 768px) {
+
     /* Fix horizontal overflow — Bootstrap row has negative margins */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
         max-width: 100%;
     }
@@ -471,7 +623,8 @@ body {
 
     /* Each cell gets a fixed aspect ratio so heights are uniform per pair */
     .bento-item {
-        aspect-ratio: 3 / 4;  /* portrait ratio — suits most photos */
+        aspect-ratio: 3 / 4;
+        /* portrait ratio — suits most photos */
         height: auto;
         overflow: hidden;
     }
@@ -483,11 +636,27 @@ body {
     }
 
     /* Row 1: photo 1 & 2 */
-    .bento-item-1 { grid-column: span 1; grid-row: span 1; }
-    .bento-item-2 { grid-column: span 1; grid-row: span 1; }
+    .bento-item-1 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .bento-item-2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
     /* Row 2: photo 3 & 4 */
-    .bento-item-3 { grid-column: span 1; grid-row: span 1; }
-    .bento-item-4 { grid-column: span 1; grid-row: span 1; }
+    .bento-item-3 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .bento-item-4 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
     /* Row 3: photo 5 full width, landscape ratio */
     .bento-item-5 {
         grid-column: span 2;
@@ -512,6 +681,7 @@ body {
 
 /* --- Mobile (max 576px) --- */
 @media (max-width: 576px) {
+
     /* Navbar */
     .navbar {
         padding: 12px 0;
@@ -549,4 +719,81 @@ body {
     .footer-bottom {
         text-align: center;
     }
+}
+
+/* =============================================
+   EXPERIENCE TIMELINE  (.tl-*)
+   ============================================= */
+.tl-wrap {
+    position: relative;
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+    margin-left: 6px;
+}
+
+.tl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 0 22px 20px;
+    position: relative;
+}
+
+.tl-item-last {
+    padding-bottom: 4px;
+}
+
+/* Dot on the border line */
+.tl-marker {
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+}
+
+.tl-marker-active {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(10, 255, 96, 0.5);
+}
+
+.tl-item:hover .tl-marker {
+    border-color: var(--accent-purple);
+}
+
+.tl-body {
+    flex: 1;
+}
+
+.tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+}
+
+.tl-badge-active {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent-green);
+    letter-spacing: 0.05em;
+}
+
+.tl-role {
+    font-weight: 700;
+    font-size: 0.93rem;
+    color: #fff;
+    margin: 4px 0 3px;
+}
+
+.tl-meta {
+    font-size: 0.76rem;
+    color: var(--text-dim);
+    margin-bottom: 0;
+    line-height: 1.5;
 }
