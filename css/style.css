@@ -392,7 +392,7 @@ body {
         height: 280px;
     }
 
-    /* Bento grid stacks below experience on tablet */
+    /* Slightly taller rows on tablet */
     .bento-grid {
         grid-template-rows: repeat(3, 130px);
     }
@@ -443,17 +443,35 @@ body {
         padding: 20px;
     }
 
-    /* Bento grid: 2 columns on mobile */
+    /* === BENTO GRID → CSS MASONRY on mobile (no cropping) === */
     .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 130px 130px 130px 130px 130px;
+        display: block;
+        column-count: 2;
+        column-gap: 10px;
     }
 
-    .bento-item-1 { grid-column: span 2; grid-row: span 1; }
-    .bento-item-2 { grid-column: span 2; grid-row: span 1; }
-    .bento-item-3 { grid-column: span 1; grid-row: span 1; }
-    .bento-item-4 { grid-column: span 1; grid-row: span 1; }
-    .bento-item-5 { grid-column: span 2; grid-row: span 1; }
+    .bento-item {
+        break-inside: avoid;
+        margin-bottom: 10px;
+        height: auto;
+    }
+
+    /* Images display at full natural height — zero cropping */
+    .bento-item img {
+        height: auto;
+        width: 100%;
+        object-fit: unset;
+    }
+
+    /* Reset grid span classes (irrelevant in column layout) */
+    .bento-item-1,
+    .bento-item-2,
+    .bento-item-3,
+    .bento-item-4,
+    .bento-item-5 {
+        grid-column: unset;
+        grid-row: unset;
+    }
 
     /* Footer */
     .footer-area {
@@ -500,11 +518,6 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Bento grid: 2 cols, shorter rows on small screen */
-    .bento-grid {
-        grid-template-rows: 100px 100px 100px 100px 100px;
-    }
-
     /* Experience timeline */
     .timeline-item {
         padding-left: 15px;
@@ -515,4 +528,3 @@ body {
         text-align: center;
     }
 }
-
