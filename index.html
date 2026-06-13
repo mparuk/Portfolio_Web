@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Paruk | Web Dev Enthusiast</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand glitch-wrapper" href="#">
+                <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
+            </a>
+            <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">// home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">// projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">// experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">// certifications</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="https://github.com/farukchiko" target="_blank"
+                            class="btn btn-hire">Github_Profile()</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero container">
+        <div class="row align-items-center w-100">
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="code-snippet">
+                    <i class="fas fa-terminal"></i> status: BINUSIAN - B28
+                </div>
+                <h1 class="big-heading">Building Code.<br>Solving Problems.</h1>
+
+                <div class="d-flex align-items-center mb-4">
+                    <span
+                        style="color: var(--accent-green); font-family: 'JetBrains Mono'; margin-right: 10px;">></span>
+                    <span id="typed-output" class="typing-text"></span>
+                </div>
+
+                <p class="text-dim lead mb-5" style="max-width: 500px;">
+                    Hi, I'm <strong>Muhammad Paruk</strong>. <br>
+                    Computer Science Student at <strong>BINUS University</strong>. <br>
+                    A Web Dev & Software Engineer Enthusiast.
+                </p>
+
+                <div class="d-flex gap-3">
+                    <a href="#work" class="btn btn-hire" style="background: var(--accent-green); color: black;">View
+                        Projects</a>
+                    <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank"
+                        class="btn btn-hire">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0 text-center" data-aos="zoom-in">
+                <div class="photo-container" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <div class="tech-ring"></div>
+                    <img src="assets/profile.jpg" alt="Muhammad Paruk" class="my-photo"
+                        onerror="this.src='https://ui-avatars.com/api/?name=MP&background=101010&color=0aff60&size=512&font-size=0.3'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK MARQUEE (RESTORED) -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <i class="fab fa-python tech-icon"></i>
+            <i class="fab fa-php tech-icon"></i>
+            <i class="fab fa-laravel tech-icon"></i>
+            <i class="fab fa-java tech-icon"></i>
+            <i class="fas fa-database tech-icon"></i>
+            <i class="fab fa-figma tech-icon"></i>
+            <i class="fab fa-git-alt tech-icon"></i>
+            <!-- Duplikat ikon agar animasinya berjalan terus-menerus tanpa terputus -->
+            <i class="fab fa-python tech-icon"></i>
+            <i class="fab fa-php tech-icon"></i>
+            <i class="fab fa-laravel tech-icon"></i>
+            <i class="fab fa-java tech-icon"></i>
+            <i class="fas fa-database tech-icon"></i>
+            <i class="fab fa-figma tech-icon"></i>
+            <i class="fab fa-git-alt tech-icon"></i>
+        </div>
+    </div>
+
+    <!-- PROJECTS SECTION -->
+    <section id="work" class="container py-5">
+        <div class="d-flex align-items-end justify-content-between mb-5" data-aos="fade-up">
+            <div>
+                <span class="code-snippet">ls -la /projects</span>
+                <h2 class="fw-bold text-white mt-2">Selected Repositories</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between mb-4">
+                        <i class="fas fa-brain fa-2x" style="color: var(--accent-purple)"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <h4 class="fw-bold mb-3">Food Recommender ML</h4>
+                    <p class="text-dim small mb-4 flex-grow-1">Machine Learning algorithm using Python to analyze user
+                        taste patterns and predict optimal culinary choices.</p>
+                    <div class="d-flex gap-2"><span class="badge bg-dark border border-secondary">Python</span><span
+                            class="badge bg-dark border border-secondary">ML</span></div>
+                    <a href="https://github.com/farukchiko/Food_Recommender_ML_System" target="_blank"
+                        class="stretched-link"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between mb-4">
+                        <i class="fas fa-server fa-2x" style="color: var(--accent-green)"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <h4 class="fw-bold mb-3">BNCC Backend Final Project</h4>
+                    <p class="text-dim small mb-4 flex-grow-1">Core backend architecture with optimized SQL queries and
+                        database handling.</p>
+                    <div class="d-flex gap-2"><span class="badge bg-dark border border-secondary">PHP</span><span
+                            class="badge bg-dark border border-secondary">SQL</span></div>
+                    <a href="https://github.com/farukchiko/Final-Project-BNCC-Backend" target="_blank"
+                        class="stretched-link"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between mb-4">
+                        <i class="fas fa-coffee fa-2x text-warning"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <h4 class="fw-bold mb-3">CafeSeJIWA System</h4>
+                    <p class="text-dim small mb-4 flex-grow-1">System implementation focusing on inventory and
+                        transaction management using C structures.</p>
+                    <div class="d-flex gap-2"><span class="badge bg-dark border border-secondary">C Lang</span></div>
+                    <a href="https://github.com/farukchiko/CafeSeJIWA_System" target="_blank"
+                        class="stretched-link"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between mb-4">
+                        <i class="fas fa-gamepad fa-2x text-info"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <h4 class="fw-bold mb-3">DinoVerse Web</h4>
+                    <p class="text-dim small mb-4 flex-grow-1">Final Project HCI focusing on engaging user interface and
+                        immersive UI interactions.</p>
+                    <div class="d-flex gap-2"><span class="badge bg-dark border border-secondary">CSS</span><span
+                            class="badge bg-dark border border-secondary">HCI</span></div>
+                    <a href="https://github.com/farukchiko/DinoVerse_Web" target="_blank" class="stretched-link"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-card">
+                    <div class="d-flex justify-content-between mb-4">
+                        <i class="fab fa-laravel fa-2x text-danger"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <h4 class="fw-bold mb-3">TPM BE Final Project</h4>
+                    <p class="text-dim small mb-4 flex-grow-1">Technical Project Management Backend. Server-side
+                        development focusing on MVC structure.</p>
+                    <div class="d-flex gap-2"><span class="badge bg-dark border border-secondary">Laravel</span></div>
+                    <a href="https://github.com/farukchiko/TPM_BE_FinalProject" target="_blank"
+                        class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="container py-5">
+        <div class="d-flex align-items-end justify-content-between mb-5" data-aos="fade-up">
+            <div>
+                <span class="code-snippet">history | grep "BNCC"</span>
+                <h2 class="fw-bold text-white mt-2">Organization Experience</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Activity Log Photos (Bento Grid) -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="project-card d-flex flex-column h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold text-white mb-0"><i class="fas fa-camera"
+                                style="color: var(--accent-purple); margin-right: 10px;"></i> Activity Gallery</h5>
+                        <span class="status-dot"></span>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-item bento-item-1">
+                            <img src="assets/org-photo-1.jpg" alt="Activity 1" style="object-position: center 15%;"
+                                onerror="this.src='https://placehold.co/400x400/101010/0aff60?text=org-photo-1.jpg'">
+                        </div>
+                        <div class="bento-item bento-item-2">
+                            <img src="assets/org-photo-2.jpg" alt="Activity 2" style="object-position: center top;"
+                                onerror="this.src='https://placehold.co/400x200/101010/0aff60?text=org-photo-2.jpg'">
+                        </div>
+                        <div class="bento-item bento-item-3">
+                            <img src="assets/org-photo-3.jpg" alt="Activity 3"
+                                onerror="this.src='https://placehold.co/200x200/101010/0aff60?text=org-photo-3.jpg'">
+                        </div>
+                        <div class="bento-item bento-item-4">
+                            <img src="assets/org-photo-4.jpg" alt="Activity 4" style="object-position: center bottom;"
+                                onerror="this.src='https://placehold.co/200x200/101010/0aff60?text=org-photo-4.jpg'">
+                        </div>
+                        <div class="bento-item bento-item-5">
+                            <img src="assets/org-photo-5.JPEG" alt="Activity 5"
+                                onerror="this.src='https://placehold.co/800x200/101010/0aff60?text=org-photo-5.jpg'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                <div class="project-card">
+                    <h4 class="fw-bold text-white mb-4"><span style="color: var(--accent-green)">@</span> Bina Nusantara
+                        Computer Club (BNCC)</h4>
+
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">Staff Learning and Training</h5>
+                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Sep 2025 - Present |
+                            Malang, Indonesia</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">Activist Learning and Training</h5>
+                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Nov 2024 - Sep 2025 |
+                            Malang, Indonesia</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">Member Backend Development</h5>
+                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Sep 2024 - Jun 2025 |
+                            Remote</p>
+                        <p class="text-dim small mt-2">Skills: Teamwork, Back-End Web Development</p>
+                    </div>
+
+                    <div class="timeline-item border-0 mb-0">
+                        <h5 class="fw-bold mb-1">Technology Project Member</h5>
+                        <p class="text-dim small mb-1" style="font-family: 'JetBrains Mono';">Dec 2024 - Feb 2025 |
+                            Remote</p>
+                        <p class="text-dim small mt-2 mb-0">Skills: Back-End Web Development, Teamwork, Time Management
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="container py-5 mb-5">
+        <div class="d-flex align-items-end justify-content-between mb-4" data-aos="fade-up">
+            <div>
+                <span class="code-snippet">cat /var/log/achievements.log</span>
+                <h2 class="fw-bold text-white mt-2">Certifications</h2>
+            </div>
+        </div>
+
+        <div class="row g-4" data-aos="zoom-in">
+            <div class="col-md-6">
+                <div class="project-card p-3 text-center">
+                    <h5 class="fw-bold mb-3 small" style="color: var(--accent-green)">Back-End Development Class (High
+                        Distinction)</h5>
+                    <img src="assets/cert-backend.jpg" alt="Backend Certification" class="cert-img"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="project-card p-3 text-center">
+                    <h5 class="fw-bold mb-3 small" style="color: var(--accent-green)">Technology Project Member
+                        (Back-End Course)</h5>
+                    <img src="assets/cert-tpm.jpg" alt="TPM Certification" class="cert-img"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <!-- Brand & Bio -->
+                <div class="col-lg-4 col-md-6 text-start">
+                    <a class="glitch-wrapper fs-4 mb-3 d-inline-block text-decoration-none" href="#">
+                        <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
+                    </a>
+                    <p class="text-dim small mt-3" style="max-width: 300px;">
+                        Building code, solving problems, and creating digital experiences. Always open to new
+                        opportunities and collaborations.
+                    </p>
+                    <div class="social-links d-flex gap-3 mt-4">
+                        <a href="https://github.com/farukchiko" target="_blank" class="text-white fs-5"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank" class="text-white fs-5"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/mhfarukz_" target="_blank" class="text-white fs-5"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 text-start">
+                    <h5 class="fw-bold mb-4"
+                        style="color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem;">
+                        > Navigation</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#home">// home</a></li>
+                        <li class="mb-2"><a href="#work">// projects</a></li>
+                        <li class="mb-2"><a href="#experience">// experience</a></li>
+                        <li class="mb-2"><a href="#certifications">// certs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 text-start">
+                    <h5 class="fw-bold mb-4"
+                        style="color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem;">
+                        > Contact</h5>
+                    <ul class="list-unstyled text-dim small footer-contact">
+                        <li class="mb-3 d-flex align-items-center gap-3">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-purple);"></i>
+                            <span>Malang, Indonesia</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-3">
+                            <i class="fas fa-university" style="color: var(--accent-purple);"></i>
+                            <span>BINUS University</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Status / CTA -->
+                <div class="col-lg-3 col-md-6 text-start">
+                    <div class="project-card p-4 h-auto"
+                        style="background: rgba(10, 255, 96, 0.02); border-color: rgba(10, 255, 96, 0.2);">
+                        <h6 class="fw-bold text-white mb-2">Ready to collaborate?</h6>
+                        <p class="text-dim small mb-4">Let's build something amazing together.</p>
+                        <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank"
+                            class="btn btn-hire w-100 text-center">Initialize_Contact()</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div
+                class="footer-bottom border-top pt-4 pb-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-dim mb-3 mb-md-0 small" style="font-family: 'JetBrains Mono', monospace;">
+                    © 2026 Muhammad Paruk. All rights reserved.
+                </p>
+                <div class="d-flex align-items-center gap-2 text-dim small"
+                    style="font-family: 'JetBrains Mono', monospace;">
+                    <span class="status-dot mb-0" style="width: 8px; height: 8px; margin-right: 5px;"></span>
+                    System Status: <span style="color:var(--accent-green)">Operational</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800 });
+
+        new Typed('#typed-output', {
+            strings: ['Web Dev Enthusiast', 'Backend Engineer Enthusiast', 'Software Engineer Enthusiast', 'BINUSIAN'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 2000
+        });
+
+        VanillaTilt.init(document.querySelector(".photo-container"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.1,
+        });
+    </script>
+</body>
+
+</html>
