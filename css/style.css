@@ -447,6 +447,7 @@ body {
     .bento-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;     /* reset desktop fixed row heights */
         grid-auto-rows: auto;
         align-items: start;
         gap: 10px;
