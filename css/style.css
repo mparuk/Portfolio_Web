@@ -400,12 +400,28 @@ body {
 
 /* --- Small tablet / Large mobile (max 768px) --- */
 @media (max-width: 768px) {
+    /* Fix horizontal overflow — Bootstrap row has negative margins */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    .hero .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
     /* Hero */
     .hero {
         padding-top: 100px;
         padding-bottom: 60px;
         min-height: auto;
         text-align: center;
+    }
+
+    /* Center the typing text line */
+    .hero .d-flex.align-items-center.mb-4 {
+        justify-content: center;
     }
 
     .big-heading {
@@ -443,35 +459,41 @@ body {
         padding: 20px;
     }
 
-    /* === BENTO GRID → 2-col paired grid on mobile (balanced, no cropping) === */
+    /* === BENTO GRID → uniform 2-col grid (consistent cell height, no gaps) === */
     .bento-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: none;     /* reset desktop fixed row heights */
+        grid-template-rows: none;
         grid-auto-rows: auto;
-        align-items: start;
+        align-items: stretch;
         gap: 10px;
     }
 
+    /* Each cell gets a fixed aspect ratio so heights are uniform per pair */
     .bento-item {
+        aspect-ratio: 3 / 4;  /* portrait ratio — suits most photos */
         height: auto;
+        overflow: hidden;
     }
 
-    /* Images display at full natural proportion — zero cropping */
     .bento-item img {
-        height: auto;
         width: 100%;
-        object-fit: unset;
+        height: 100%;
+        object-fit: cover;
     }
 
-    /* Row 1: photo 1 & 2 side by side */
+    /* Row 1: photo 1 & 2 */
     .bento-item-1 { grid-column: span 1; grid-row: span 1; }
     .bento-item-2 { grid-column: span 1; grid-row: span 1; }
-    /* Row 2: photo 3 & 4 side by side */
+    /* Row 2: photo 3 & 4 */
     .bento-item-3 { grid-column: span 1; grid-row: span 1; }
     .bento-item-4 { grid-column: span 1; grid-row: span 1; }
-    /* Row 3: photo 5 full width */
-    .bento-item-5 { grid-column: span 2; grid-row: span 1; }
+    /* Row 3: photo 5 full width, landscape ratio */
+    .bento-item-5 {
+        grid-column: span 2;
+        grid-row: span 1;
+        aspect-ratio: 16 / 9;
+    }
 
     /* Footer */
     .footer-area {
