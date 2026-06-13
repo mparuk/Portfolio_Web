@@ -443,35 +443,34 @@ body {
         padding: 20px;
     }
 
-    /* === BENTO GRID → CSS MASONRY on mobile (no cropping) === */
+    /* === BENTO GRID → 2-col paired grid on mobile (balanced, no cropping) === */
     .bento-grid {
-        display: block;
-        column-count: 2;
-        column-gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        align-items: start;
+        gap: 10px;
     }
 
     .bento-item {
-        break-inside: avoid;
-        margin-bottom: 10px;
         height: auto;
     }
 
-    /* Images display at full natural height — zero cropping */
+    /* Images display at full natural proportion — zero cropping */
     .bento-item img {
         height: auto;
         width: 100%;
         object-fit: unset;
     }
 
-    /* Reset grid span classes (irrelevant in column layout) */
-    .bento-item-1,
-    .bento-item-2,
-    .bento-item-3,
-    .bento-item-4,
-    .bento-item-5 {
-        grid-column: unset;
-        grid-row: unset;
-    }
+    /* Row 1: photo 1 & 2 side by side */
+    .bento-item-1 { grid-column: span 1; grid-row: span 1; }
+    .bento-item-2 { grid-column: span 1; grid-row: span 1; }
+    /* Row 2: photo 3 & 4 side by side */
+    .bento-item-3 { grid-column: span 1; grid-row: span 1; }
+    .bento-item-4 { grid-column: span 1; grid-row: span 1; }
+    /* Row 3: photo 5 full width */
+    .bento-item-5 { grid-column: span 2; grid-row: span 1; }
 
     /* Footer */
     .footer-area {
