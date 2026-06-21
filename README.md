@@ -45,7 +45,7 @@ Karena ini adalah website statis tanpa ketergantungan *server-side*, kamu bisa m
 
 1. Clone repositori ini:
 ```bash
-   git clone [https://github.com/farukchiko/Portfolio_Web.git](https://github.com/farukchiko/Portfolio_Web.git)
+   git clone [https://github.com/mparuk/Portfolio_Web.git](https://github.com/farukchiko/Portfolio_Web.git)
    ```
 2. Buka folder proyek:
 ```bash
