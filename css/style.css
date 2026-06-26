@@ -20,18 +20,62 @@ body {
 #preloader {
     position: fixed;
     inset: 0;
-    background: #020202;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    pointer-events: all;
 }
 
-#preloader.hidden {
+/* Two curtain halves */
+#preloader-top,
+#preloader-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #020202;
+    transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+    will-change: transform;
+}
+#preloader-top    { top: 0; transform: translateY(0); }
+#preloader-bottom { bottom: 0; transform: translateY(0); }
+
+/* When .hidden is added the curtains slide apart */
+#preloader.hidden #preloader-top    { transform: translateY(-100%); }
+#preloader.hidden #preloader-bottom { transform: translateY(100%); }
+
+/* Content inside the preloader stays centred */
+#preloader-content {
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Fade content out slightly before curtains open */
+#preloader.dismissing #preloader-content {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+/* Remove from layout after animation */
+#preloader.gone {
+    display: none;
+}
+
+/* Main page enters with a gentle fade-up */
+body.page-ready main,
+body.page-ready section,
+body.page-ready footer,
+body.page-ready .marquee-container,
+body.page-ready nav {
+    animation: page-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes page-enter {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .preloader-inner {
@@ -50,10 +94,7 @@ body {
     position: relative;
 }
 
-/* Reuse global glitch animation on preloader logo */
-.preloader-logo .glitch {
-    color: #fff;
-}
+.preloader-logo .glitch { color: #fff; }
 
 .preloader-terminal {
     width: 100%;
@@ -70,27 +111,15 @@ body {
     overflow: hidden;
 }
 
-.terminal-line .prompt {
-    color: var(--accent-green);
-    margin-right: 8px;
-}
-
-.terminal-line .success {
-    color: var(--accent-green);
-}
-
-.terminal-line .warn {
-    color: #f0c040;
-}
-
-.terminal-line .cmd {
-    color: #fff;
-}
+.terminal-line .prompt  { color: var(--accent-green); margin-right: 8px; }
+.terminal-line .success { color: var(--accent-green); }
+.terminal-line .warn    { color: #f0c040; }
+.terminal-line .cmd     { color: #fff; }
 
 .preloader-bar-wrap {
     width: 100%;
     height: 2px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255,255,255,0.06);
     border-radius: 2px;
     overflow: hidden;
 }
@@ -100,8 +129,8 @@ body {
     width: 0%;
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
     border-radius: 2px;
-    transition: width 0.05s linear;
-    box-shadow: 0 0 10px rgba(10, 255, 96, 0.5);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 12px rgba(10,255,96,0.6), 0 0 4px rgba(112,0,255,0.4);
 }
 
 /* --- GLITCH LOGO STYLE --- */

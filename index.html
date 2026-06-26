@@ -21,18 +21,24 @@
 
     <!-- ===================== PRELOADER ===================== -->
     <div id="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-logo">
-                <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
-            </div>
-            <div class="preloader-terminal">
-                <div class="terminal-line" id="line1"></div>
-                <div class="terminal-line" id="line2"></div>
-                <div class="terminal-line" id="line3"></div>
-                <div class="terminal-line" id="line4"></div>
-            </div>
-            <div class="preloader-bar-wrap">
-                <div class="preloader-bar" id="preloader-bar"></div>
+        <!-- Curtain halves — slide apart on exit -->
+        <div id="preloader-top"></div>
+        <div id="preloader-bottom"></div>
+        <!-- Terminal content centred on top -->
+        <div id="preloader-content">
+            <div class="preloader-inner">
+                <div class="preloader-logo">
+                    <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
+                </div>
+                <div class="preloader-terminal">
+                    <div class="terminal-line" id="line1"></div>
+                    <div class="terminal-line" id="line2"></div>
+                    <div class="terminal-line" id="line3"></div>
+                    <div class="terminal-line" id="line4"></div>
+                </div>
+                <div class="preloader-bar-wrap">
+                    <div class="preloader-bar" id="preloader-bar"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -518,30 +524,40 @@
             }
 
             async function runSequence() {
-                animateBar(20, 300);
+                animateBar(20, 400);
 
-                await typeLine(messages[0].el, messages[0].html, 38);
-                await new Promise(r => setTimeout(r, 180));
-                animateBar(50, 350);
+                await typeLine(messages[0].el, messages[0].html, 36);
+                await new Promise(r => setTimeout(r, 160));
+                animateBar(50, 400);
 
-                await typeLine(messages[1].el, messages[1].html, 28);
-                await new Promise(r => setTimeout(r, 120));
-                animateBar(72, 250);
+                await typeLine(messages[1].el, messages[1].html, 26);
+                await new Promise(r => setTimeout(r, 100));
+                animateBar(72, 300);
 
-                await typeLine(messages[2].el, messages[2].html, 28);
-                await new Promise(r => setTimeout(r, 120));
-                animateBar(90, 200);
+                await typeLine(messages[2].el, messages[2].html, 26);
+                await new Promise(r => setTimeout(r, 100));
+                animateBar(90, 240);
 
-                await typeLine(messages[3].el, messages[3].html, 32);
-                await new Promise(r => setTimeout(r, 250));
-                animateBar(100, 180);
+                await typeLine(messages[3].el, messages[3].html, 30);
+                await new Promise(r => setTimeout(r, 220));
+                animateBar(100, 300);
 
-                // Wait for bar to finish, then fade out
-                await new Promise(r => setTimeout(r, 500));
+                // Pause at 100%
+                await new Promise(r => setTimeout(r, 400));
+
+                // Phase 1: fade out terminal text
+                preloader.classList.add('dismissing');
+                await new Promise(r => setTimeout(r, 300));
+
+                // Phase 2: curtains split open
                 preloader.classList.add('hidden');
 
-                // Remove from DOM after transition ends
-                preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+                // Phase 3: page content fades up
+                document.body.classList.add('page-ready');
+
+                // Cleanup after curtain animation (0.9s)
+                await new Promise(r => setTimeout(r, 950));
+                preloader.classList.add('gone');
             }
 
             runSequence();
