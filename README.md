@@ -1,57 +1,65 @@
-# <paruk.dev /> - Personal Portfolio Web
+# Muhammad Paruk — Personal Portfolio
 
-[![Deploy with Vercel](https://vercelbadge.vercel.app/api/farukchiko/Portfolio_Web)](https://muhammadparuk.vercel.app)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://github.com/farukchiko/Portfolio_Web)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://github.com/farukchiko/Portfolio_Web)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=flat-square&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+A responsive, single-page portfolio for presenting my background, selected projects, BNCC experience, skills, and certificates while preparing for internship opportunities.
 
-Portofolio web statis personal yang dirancang dengan tema *Cyber-Terminal* dipadukan dengan tata letak *Modern Bento Grid*. Website ini dibangun untuk menampilkan rekam jejak digital, proyek teknis, pengalaman organisasi, serta sertifikasi keahlian.
+**Live site:** [muhammadparuk.vercel.app](https://muhammadparuk.vercel.app)
 
-🔗 **Live Demo:** [muhammadparuk.vercel.app](https://muhammadparuk.vercel.app)
+## Overview
 
----
+This portfolio is built with plain HTML, CSS, and JavaScript. Its editorial layout pairs a light theme with a black project section, with a dark theme available from the navigation. The page is designed to work across desktop, laptop, tablet, and mobile screen sizes.
 
-## 👨‍💻 About Me
-**Muhammad Paruk**
-A Computer Science Student at **BINUS University**. 
-Backend and Software Engineer enthusiast focused on clean code, system architecture, and robust web development.
+## Features
 
-## ✨ Key Features
-- **Cyber-Glass Aesthetics:** Penggabungan elemen visual *hacker/terminal* dengan transparansi *glassmorphism* modern.
-- **Bento Grid System:** Tata letak galeri dan proyek menggunakan struktur kotak modular yang rapi.
-- **Micro-Interactions:** Dilengkapi dengan efek animasi *typing* (mengetik otomatis), *scroll reveal* (muncul saat digulir), dan efek 3D *tilt* interaktif pada foto profil.
-- **Fully Responsive:** Tata letak yang beradaptasi dengan mulus pada perangkat *mobile*, *tablet*, maupun *desktop*.
-- **Continuous Deployment:** Terintegrasi langsung dengan Vercel untuk pembaruan *live* otomatis setiap kali ada *push* ke *branch* `main`.
+- Responsive navigation with a compact menu on smaller screens
+- Light and dark themes, with the selected theme saved in the browser
+- Introduction, skills, projects, organization experience, and certificate sections
+- Expandable experience entries and a horizontally scrollable certificate gallery
+- Subtle page entrance and scroll reveal animations
+- Reduced-motion support for visitors who prefer fewer animations
+- Accessible labels and alternative text for interactive controls and images
 
-## 🛠️ Tech Stack
-- **Struktur & Gaya:** HTML5, CSS3 murni (Custom Properties/Variabel), Bootstrap 5 (Grid System)
-- **Animasi & Interaksi:**
-  - `AOS (Animate On Scroll)` untuk transisi elemen saat digulir.
-  - `Typed.js` untuk efek teks terminal.
-  - `Vanilla-tilt.js` untuk efek 3D *hover* pada gambar.
-- **Deployment:** Vercel
+## Built With
 
-## 📂 Folder Structure
+- **HTML5** for page structure
+- **CSS3** for layout, responsive styles, themes, and animation
+- **Vanilla JavaScript** for theme selection, navigation, certificate controls, and scroll reveals
+- **Google Fonts** — DM Sans and Manrope
+- **Font Awesome 6** for interface icons
+
+There is no framework, package manager, or build step. Google Fonts and Font Awesome are loaded from their CDNs.
+
+## Project Structure
+
 ```text
-Portfolio_Web/
-├── assets/             # Berisi seluruh aset gambar (foto profil, favicon, sertifikat, galeri)
-├── css/                # Berisi file style.css utama
-├── index.html          # File HTML utama (Single Page Application)
-└── README.md           # Dokumentasi repositori
+.
+├── assets/         # Profile photo, BNCC activity photos, logo, and certificates
+├── css/
+│   └── style.css   # Layout, responsive rules, themes, and animations
+├── index.html      # Portfolio content and interaction scripts
+└── README.md
 ```
 
-## 🚀 How to Run Locally
-Karena ini adalah website statis tanpa ketergantungan *server-side*, kamu bisa menjalankannya dengan sangat mudah:
+## Run Locally
 
-1. Clone repositori ini:
-```bash
-   git clone [https://github.com/mparuk/Portfolio_Web.git](https://github.com/farukchiko/Portfolio_Web.git)
-   ```
-2. Buka folder proyek:
-```bash
-   cd Portfolio_Web
-   ```
-3. Buka file `index.html` menggunakan *browser* pilihanmu, atau gunakan ekstensi seperti **Live Server** di VS Code untuk pengalaman *development* yang lebih baik.
+Clone the repository and open `index.html` in a browser:
 
----
-*© 2026 Muhammad Paruk. System Status: Operational.*
+```bash
+git clone https://github.com/mparuk/Portfolio_Web.git
+cd Portfolio_Web
+```
+
+For local HTTP preview, run:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit [http://localhost:8000](http://localhost:8000).
+
+## Contact
+
+- **GitHub:** [github.com/mparuk](https://github.com/mparuk)
+- **LinkedIn:** [linkedin.com/in/muhammadparuk](https://www.linkedin.com/in/muhammadparuk)
+- **Instagram:** [@mhfarukz_](https://www.instagram.com/mhfarukz_/)
+
+© 2026 Muhammad Paruk
