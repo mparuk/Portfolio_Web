@@ -1,631 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Paruk | Web Dev Enthusiast</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap"
-        rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="Portfolio of Muhammad Paruk, a Computer Science student and aspiring backend developer.">
+    <title>Muhammad Paruk | Portfolio</title>
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (() => {
+            try {
+                document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'dark' ? 'dark' : 'light';
+            } catch {
+                document.documentElement.dataset.theme = 'light';
+            }
+        })();
+    </script>
 </head>
-
 <body>
-
-    <!-- ===================== PRELOADER ===================== -->
-    <div id="preloader">
-        <!-- Curtain halves — slide apart on exit -->
-        <div id="preloader-top"></div>
-        <div id="preloader-bottom"></div>
-        <!-- Terminal content centred on top -->
-        <div id="preloader-content">
-            <div class="preloader-inner">
-                <div class="preloader-logo">
-                    <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
-                </div>
-                <div class="preloader-terminal">
-                    <div class="terminal-line" id="line1"></div>
-                    <div class="terminal-line" id="line2"></div>
-                    <div class="terminal-line" id="line3"></div>
-                    <div class="terminal-line" id="line4"></div>
-                </div>
-                <div class="preloader-bar-wrap">
-                    <div class="preloader-bar" id="preloader-bar"></div>
-                </div>
-            </div>
-        </div>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-mark">M<span>.</span>P</div>
+        <div class="loader-line"><span></span></div>
     </div>
-    <!-- ===================================================== -->
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand glitch-wrapper" href="#">
-                <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
-            </a>
-            <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <main class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="#home" aria-label="Muhammad Paruk, back to top">M<span>.</span>PARUK</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavigation">
+                <span></span><span></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">// home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#work">// projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">// experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">// certifications</a></li>
-                    <li class="nav-item ms-3">
-                        <a href="https://github.com/mparuk" target="_blank" class="btn btn-hire">Github_Profile()</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="hero container">
-        <div class="row align-items-center w-100">
-            <div class="col-lg-7" data-aos="fade-right">
-                <div class="code-snippet">
-                    <i class="fas fa-terminal"></i> status: BINUSIAN - B28
-                </div>
-                <h1 class="big-heading">Building Code.<br>Solving Problems.</h1>
-
-                <div class="d-flex align-items-center mb-4">
-                    <span
-                        style="color: var(--accent-green); font-family: 'JetBrains Mono'; margin-right: 10px;">></span>
-                    <span id="typed-output" class="typing-text"></span>
-                </div>
-
-                <p class="text-dim lead mb-5" style="max-width: 500px;">
-                    Hi, I'm <strong>Muhammad Paruk</strong>. <br>
-                    Computer Science Student at <strong>BINUS University</strong>. <br>
-                    Aspiring Software Engineer & Backend Developer
-                </p>
-
-                <div class="d-flex gap-3">
-                    <a href="#work" class="btn btn-hire" style="background: var(--accent-green); color: black;">View
-                        Projects</a>
-                    <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank"
-                        class="btn btn-hire">LinkedIn</a>
-                </div>
-            </div>
-
-            <div class="col-lg-5 mt-5 mt-lg-0 text-center" data-aos="zoom-in">
-                <div class="photo-container" data-tilt data-tilt-max="10" data-tilt-speed="400">
-                    <div class="tech-ring"></div>
-                    <img src="assets/profile.jpg" alt="Muhammad Paruk" class="my-photo"
-                        onerror="this.src='https://ui-avatars.com/api/?name=MP&background=101010&color=0aff60&size=512&font-size=0.3'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TECH STACK MARQUEE -->
-    <div class="marquee-container">
-        <!-- Single flex track: two identical sets for seamless GPU loop -->
-        <div class="marquee-track" aria-hidden="true">
-            <!-- Set A -->
-            <div class="marquee-set">
-                <i class="fab fa-python tech-icon"></i>
-                <i class="fab fa-php tech-icon"></i>
-                <i class="fab fa-laravel tech-icon"></i>
-                <i class="fab fa-java tech-icon"></i>
-                <i class="fas fa-database tech-icon"></i>
-                <i class="fab fa-figma tech-icon"></i>
-                <i class="fab fa-git-alt tech-icon"></i>
-                <i class="fab fa-node-js tech-icon"></i>
-                <i class="fab fa-js-square tech-icon"></i>
-            </div>
-            <!-- Set B (exact duplicate — creates seamless loop) -->
-            <div class="marquee-set">
-                <i class="fab fa-python tech-icon"></i>
-                <i class="fab fa-php tech-icon"></i>
-                <i class="fab fa-laravel tech-icon"></i>
-                <i class="fab fa-java tech-icon"></i>
-                <i class="fas fa-database tech-icon"></i>
-                <i class="fab fa-figma tech-icon"></i>
-                <i class="fab fa-git-alt tech-icon"></i>
-                <i class="fab fa-node-js tech-icon"></i>
-                <i class="fab fa-js-square tech-icon"></i>
-            </div>
-        </div>
-    </div>
-
-    <!-- PROJECTS SECTION -->
-    <section id="work" class="container py-5">
-        <div class="d-flex align-items-end justify-content-between mb-5" data-aos="fade-up">
-            <div>
-                <span class="code-snippet">ls -la /projects</span>
-                <h2 class="fw-bold text-white mt-2">Selected Repositories</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between mb-4">
-                        <i class="fas fa-gamepad fa-2x text-info"></i>
-                        <span class="status-dot"></span>
-                    </div>
-                    <h4 class="fw-bold mb-3">DinoVerse Web</h4>
-                    <p class="text-dim small mb-4 flex-grow-1">A dinosaur-themed web frontend built with HTML and CSS. It presents concise dinosaur learning content and supports basic connection to a Unity app through barcode scanning.</p>
-                    <div class="d-flex gap-2 flex-wrap">
-                        <span class="badge bg-dark border border-secondary">HTML</span>
-                        <span class="badge bg-dark border border-secondary">CSS</span>
-                    </div>
-                    <a href="https://github.com/mparuk/DinoVerse_Web" target="_blank" rel="noopener noreferrer"
-                        class="stretched-link"></a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between mb-4">
-                        <i class="fas fa-server fa-2x" style="color: var(--accent-green)"></i>
-                        <span class="status-dot"></span>
-                    </div>
-                    <h4 class="fw-bold mb-3">Sweet Shop E-Commerce Backend</h4>
-                    <p class="text-dim small mb-4 flex-grow-1">A Laravel backend for an online shop with role-based admin and user access, product management, cart and checkout flows, automatic stock updates, order history, and profile management.</p>
-                    <div class="d-flex gap-2 flex-wrap">
-                        <span class="badge bg-dark border border-secondary">Laravel 12</span>
-                        <span class="badge bg-dark border border-secondary">PHP 8.3</span>
-                        <span class="badge bg-dark border border-secondary">MySQL</span>
-                        <span class="badge bg-dark border border-secondary">Bootstrap 5</span>
-                        <span class="badge bg-dark border border-secondary">Breeze Auth</span>
-                    </div>
-                    <a href="https://github.com/mparuk/Final-Project-BNCC-Backend" target="_blank" rel="noopener noreferrer"
-                        class="stretched-link"></a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between mb-4">
-                        <i class="fas fa-location-dot fa-2x" style="color: var(--accent-purple)"></i>
-                        <span class="status-dot"></span>
-                    </div>
-                    <h4 class="fw-bold mb-3">AI Food Recommendation System – Malang</h4>
-                    <p class="text-dim small mb-4 flex-grow-1">Recommends restaurants in and around Malang using the user’s location, geographic distance, ratings, and review counts. The system applies K-Nearest Neighbors to find nearby, relevant options.</p>
-                    <div class="d-flex gap-2 flex-wrap">
-                        <span class="badge bg-dark border border-secondary">Python</span>
-                        <span class="badge bg-dark border border-secondary">Scikit-learn</span>
-                        <span class="badge bg-dark border border-secondary">KNN</span>
-                        <span class="badge bg-dark border border-secondary">Pandas</span>
-                        <span class="badge bg-dark border border-secondary">NumPy</span>
-                        <span class="badge bg-dark border border-secondary">Geopy</span>
-                        <span class="badge bg-dark border border-secondary">OpenStreetMap</span>
-                        <span class="badge bg-dark border border-secondary">Geoapify API</span>
-                    </div>
-                    <a href="https://github.com/mparuk/Food_Recommender_ML_System" target="_blank" rel="noopener noreferrer" class="stretched-link"></a>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between mb-4">
-                        <i class="fas fa-handshake fa-2x" style="color: var(--accent-green)"></i>
-                        <span class="status-dot"></span>
-                    </div>
-                    <h4 class="fw-bold mb-3">ResQ</h4>
-                    <p class="text-dim small mb-4 flex-grow-1">Work in progress. I’m collaborating on ResQ as a backend developer.</p>
-                    <div class="d-flex gap-2 flex-wrap">
-                        <span class="badge bg-dark border border-secondary">Kotlin</span>
-                        <span class="badge bg-dark border border-secondary">Android</span>
-                        <span class="badge bg-dark border border-secondary">Jetpack Compose</span>
-                    </div>
-                    <a href="https://github.com/alfisfathoni/ResQ" target="_blank" rel="noopener noreferrer" class="stretched-link"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="container py-5">
-        <div class="d-flex align-items-end justify-content-between mb-5" data-aos="fade-up">
-            <div>
-                <span class="code-snippet">history | grep "BNCC"</span>
-                <h2 class="fw-bold text-white mt-2">Organization Experience</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- Activity Log Photos (Bento Grid) -->
-            <div class="col-lg-5" data-aos="fade-right">
-                <div class="project-card d-flex flex-column h-100">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="fw-bold text-white mb-0"><i class="fas fa-camera"
-                                style="color: var(--accent-purple); margin-right: 10px;"></i> Activity Gallery</h5>
-                        <span class="status-dot"></span>
-                    </div>
-
-                    <div class="bento-grid">
-                        <div class="bento-item bento-item-1">
-                            <img src="assets/org-photo-1.jpg" alt="Activity 1" style="object-position: center 15%;"
-                                onerror="this.src='https://placehold.co/400x400/101010/0aff60?text=org-photo-1.jpg'">
-                        </div>
-                        <div class="bento-item bento-item-2">
-                            <img src="assets/org-photo-2.jpg" alt="Activity 2" style="object-position: center top;"
-                                onerror="this.src='https://placehold.co/400x200/101010/0aff60?text=org-photo-2.jpg'">
-                        </div>
-                        <div class="bento-item bento-item-3">
-                            <img src="assets/org-photo-3.jpg" alt="Activity 3"
-                                onerror="this.src='https://placehold.co/200x200/101010/0aff60?text=org-photo-3.jpg'">
-                        </div>
-                        <div class="bento-item bento-item-4">
-                            <img src="assets/org-photo-4.jpg" alt="Activity 4" style="object-position: center bottom;"
-                                onerror="this.src='https://placehold.co/200x200/101010/0aff60?text=org-photo-4.jpg'">
-                        </div>
-                        <div class="bento-item bento-item-5">
-                            <img src="assets/org-photo-5.JPEG" alt="Activity 5"
-                                onerror="this.src='https://placehold.co/800x200/101010/0aff60?text=org-photo-5.jpg'">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                <div class="project-card">
-                    <h4 class="fw-bold text-white mb-1">
-                        <span style="color: var(--accent-green)">@</span> Bina Nusantara Computer Club
-                    </h4>
-                    <p class="text-dim mb-4" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem;">
-                        Malang, Indonesia &nbsp;·&nbsp; 2024 – Present
-                    </p>
-
-                    <div class="tl-wrap">
-
-                        <!-- ① Current (top) -->
-                        <div class="tl-item">
-                            <div class="tl-marker tl-marker-active"></div>
-                            <div class="tl-body">
-                                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                                    <span class="tl-date">Sep 2025 – Present</span>
-                                    <span class="tl-badge-active">● Active</span>
-                                </div>
-                                <p class="tl-role">Staff Learning and Training</p>
-                                <p class="tl-meta">Malang, Indonesia</p>
-                                <p class="tl-description">Help organize LnT classes as part of BNCC’s Learning and Training division, while continuing to develop teamwork and time management skills.</p>
-                            </div>
-                        </div>
-
-                        <!-- ② -->
-                        <div class="tl-item">
-                            <div class="tl-marker"></div>
-                            <div class="tl-body">
-                                <div class="mb-1">
-                                    <span class="tl-date">Nov 2024 – Sep 2025</span>
-                                </div>
-                                <p class="tl-role">Activist Learning and Training</p>
-                                <p class="tl-meta">Malang, Indonesia</p>
-                                <p class="tl-description">Learned to support organizational activities, including helping organize LnT classes under the committee’s guidance. Developed teamwork, time management, leadership, and other soft skills.</p>
-                            </div>
-                        </div>
-
-                        <!-- ③ -->
-                        <div class="tl-item">
-                            <div class="tl-marker"></div>
-                            <div class="tl-body">
-                                <div class="mb-1">
-                                    <span class="tl-date">Dec 2024 – Feb 2025</span>
-                                </div>
-                                <p class="tl-role">Technology Project Member</p>
-                                <p class="tl-meta">Remote &nbsp;·&nbsp; Back-End Web Dev, Teamwork, Time Management</p>
-                                <p class="tl-description">Worked on a backend project with members from other divisions, including UI/UX and Frontend. Focused on backend development using PHP and Laravel.</p>
-                            </div>
-                        </div>
-
-                        <!-- ④ Oldest (bottom) -->
-                        <div class="tl-item tl-item-last">
-                            <div class="tl-marker"></div>
-                            <div class="tl-body">
-                                <div class="mb-1">
-                                    <span class="tl-date">Sep 2024 – Jun 2025</span>
-                                </div>
-                                <p class="tl-role">Member Backend Development</p>
-                                <p class="tl-meta">Remote &nbsp;·&nbsp; Teamwork, Back-End Web Development</p>
-                                <p class="tl-description">Completed a one-year LnT Backend class, learning PHP and Laravel. Created two projects as part of the class: a midterm project and a final project.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="bncc-skills">
-                        <span class="bncc-skills-label">SKILLS DEVELOPED AT BNCC</span>
-                        <div class="bncc-skill-list">
-                            <span class="bncc-skill"><i class="fas fa-clock"></i> Time Management</span>
-                            <span class="bncc-skill"><i class="fas fa-people-group"></i> Teamwork</span>
-                            <span class="bncc-skill"><i class="fas fa-code"></i> Backend Web Development</span>
-                            <span class="bncc-skill"><i class="fas fa-comments"></i> Communication</span>
-                            <span class="bncc-skill"><i class="fas fa-lightbulb"></i> Problem Solving</span>
-                            <span class="bncc-skill"><i class="fas fa-brain"></i> Critical Thinking</span>
-                            <span class="bncc-skill"><i class="fas fa-handshake"></i> Collaboration</span>
-                            <span class="bncc-skill"><i class="fas fa-list-check"></i> Self Management</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications" class="container py-5 mb-5">
-        <div class="d-flex align-items-end justify-content-between mb-4" data-aos="fade-up">
-            <div>
-                <span class="code-snippet">cat /var/log/achievements.log</span>
-                <h2 class="fw-bold text-white mt-2">Certifications</h2>
-            </div>
-            <div class="cert-controls" aria-label="Certificate navigation">
-                <button class="cert-scroll-button" type="button" data-cert-scroll="-1" aria-label="Scroll to previous certificates">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            <nav class="site-navigation" id="siteNavigation" aria-label="Main navigation">
+                <a href="#about">About <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                <a href="#work">Projects <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                <a href="#experience">Experience <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                <a href="#certifications">Certificates <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                <a href="#contact">Contact <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+                    <i class="fa-regular fa-moon" aria-hidden="true"></i>
                 </button>
-                <button class="cert-scroll-button" type="button" data-cert-scroll="1" aria-label="Scroll to next certificates">
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </button>
+            </nav>
+        </header>
+
+        <section class="hero" id="home" aria-labelledby="heroTitle">
+            <div class="hero-copy">
+                <span class="eyebrow"><span class="eyebrow-dot"></span> COMPUTER SCIENCE · BINUSIAN B28</span>
+                <h1 id="heroTitle">Muhammad<br>Paruk<span class="hero-period">.</span></h1>
+                <p class="hero-intro">I build thoughtful digital solutions with a focus on backend development, clean systems, and solving practical problems.</p>
+                <div class="hero-actions">
+                    <a class="pill-link pill-link-dark" href="#work">Explore my projects <span class="arrow-circle"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></a>
+                    <a class="text-link" href="https://www.linkedin.com/in/muhammadparuk" target="_blank" rel="noopener noreferrer">Let’s connect <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+                <div class="hero-proof">
+                    <div class="mini-stack" aria-hidden="true">
+                        <span>PHP</span><span>LV</span><span>SQL</span>
+                    </div>
+                    <p><strong>Backend development</strong><br>PHP · Laravel · MySQL</p>
+                </div>
             </div>
-        </div>
 
-        <div class="cert-track" id="certificateTrack" data-aos="zoom-in" tabindex="0" role="region" aria-label="Certificates. Scroll horizontally to view each certificate.">
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">Back-End Development Class (High Distinction)</h5>
-                    <img src="assets/cert-backend.jpg" alt="Back-End Development Class High Distinction certificate" class="cert-img" loading="lazy" onerror="this.style.display='none'">
+            <div class="hero-portrait" aria-label="Portrait and professional focus">
+                <div class="portrait-orbit orbit-outer"></div>
+                <div class="portrait-orbit orbit-inner"></div>
+                <div class="portrait-frame">
+                    <img src="assets/profile.jpg" alt="Portrait of Muhammad Paruk">
                 </div>
-            </article>
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">Technology Project Member (Back-End Course)</h5>
-                    <img src="assets/cert-tpm.jpg" alt="Technology Project Member Back-End Course certificate" class="cert-img" loading="lazy" onerror="this.style.display='none'">
-                </div>
-            </article>
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">C Programming Certificate</h5>
-                    <img src="assets/cert-c.jpg" alt="C programming certificate" class="cert-img" loading="lazy" onerror="this.style.display='none'">
-                </div>
-            </article>
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">UI/UX Design Mentor</h5>
-                    <img src="assets/cert-mentor.jpg" alt="Mentor certificate" class="cert-img" loading="lazy" onerror="this.style.display='none'">
-                </div>
-            </article>
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">UI/UX Competition Participant — ISFEST 2025</h5>
-                    <iframe class="cert-pdf" src="assets/cert-lomba1.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of Appreciation for participating in the UI/UX Competition at ISFEST 2025" loading="lazy"></iframe>
-                    <a class="cert-pdf-link" href="assets/cert-lomba1.pdf" target="_blank" rel="noopener noreferrer">Open full certificate <i class="fas fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i></a>
-                </div>
-            </article>
-            <article class="cert-slide">
-                <div class="project-card cert-card p-3 text-center">
-                    <h5 class="fw-bold mb-3 small">UI/UX Competition Participant — Technoday 2025</h5>
-                    <iframe class="cert-pdf" src="assets/cert-lomba2.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of participation in the UI/UX event at Technoday 2025" loading="lazy"></iframe>
-                    <a class="cert-pdf-link" href="assets/cert-lomba2.pdf" target="_blank" rel="noopener noreferrer">Open full certificate <i class="fas fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i></a>
-                </div>
-            </article>
-        </div>
-    </section>
+                <span class="orbit-tag tag-backend">Backend Developer</span>
+                <span class="orbit-tag tag-bncc">BNCC · LnT</span>
+                <span class="orbit-tag tag-laravel">PHP &amp; Laravel</span>
+                <span class="orbit-tag tag-student">BINUS University</span>
+            </div>
+            <a class="scroll-cue" href="#about"><span></span> Scroll to explore</a>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <!-- Brand & Bio -->
-                <div class="col-lg-4 col-md-6 text-start">
-                    <a class="glitch-wrapper fs-4 mb-3 d-inline-block text-decoration-none" href="#">
-                        <span class="glitch" data-text="<paruk.dev />">&lt;paruk.dev /&gt;</span>
-                    </a>
-                    <p class="text-dim small mt-3" style="max-width: 300px;">
-                        Building code, solving problems, and creating digital experiences. Always open to new
-                        opportunities and collaborations.
-                    </p>
-                    <div class="social-links d-flex gap-3 mt-4">
-                        <a href="https://github.com/mparuk" target="_blank" class="text-white fs-5"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank" class="text-white fs-5"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/mhfarukz_" target="_blank" class="text-white fs-5"><i
-                                class="fab fa-instagram"></i></a>
+        <section class="about-panel" id="about" aria-labelledby="aboutTitle">
+            <div class="about-intro">
+                <span class="section-kicker">ABOUT ME</span>
+                <h2 id="aboutTitle">Curious by nature.<br>Building with purpose.</h2>
+                <p>I’m a Computer Science student at BINUS University preparing for internship opportunities. I enjoy learning how software works behind the scenes and turning ideas into useful applications.</p>
+                <div class="signature-mark" aria-hidden="true">M<span>.</span>P</div>
+            </div>
+            <div class="journey-list" aria-label="My BNCC experience">
+                <details class="journey-item" open>
+                    <summary>
+                        <span class="journey-number">01</span>
+                        <span class="journey-heading"><strong>Staff · Learning and Training</strong><small>Sep 2025 – Present</small></span>
+                        <span class="journey-indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="journey-copy"><p>Help organize LnT classes as part of BNCC’s Learning and Training division, while continuing to develop teamwork and time management skills.</p></div>
+                </details>
+                <details class="journey-item">
+                    <summary>
+                        <span class="journey-number tone-blue">02</span>
+                        <span class="journey-heading"><strong>Activist · Learning and Training</strong><small>Nov 2024 – Sep 2025</small></span>
+                        <span class="journey-indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="journey-copy"><p>Learned to support organizational activities, including helping organize LnT classes under the committee’s guidance. Developed teamwork, time management, leadership, and other soft skills.</p></div>
+                </details>
+                <details class="journey-item">
+                    <summary>
+                        <span class="journey-number tone-lime">03</span>
+                        <span class="journey-heading"><strong>Technology Project Member</strong><small>Dec 2024 – Feb 2025</small></span>
+                        <span class="journey-indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="journey-copy"><p>Worked on a backend project with members from UI/UX and Frontend. Focused on backend development using PHP and Laravel.</p></div>
+                </details>
+                <details class="journey-item">
+                    <summary>
+                        <span class="journey-number tone-violet">04</span>
+                        <span class="journey-heading"><strong>Member · Backend Development</strong><small>Sep 2024 – Jun 2025</small></span>
+                        <span class="journey-indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="journey-copy"><p>Completed a one-year LnT Backend class, learning PHP and Laravel. Created two projects as part of the class: a midterm project and a final project.</p></div>
+                </details>
+            </div>
+        </section>
+
+        <section class="skills-strip" aria-labelledby="skillsTitle">
+            <div>
+                <span class="section-kicker">WHAT I’VE DEVELOPED AT BNCC</span>
+                <h2 id="skillsTitle">Skills in practice</h2>
+            </div>
+            <div class="skill-chips">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> Time management</span>
+                <span><i class="fa-solid fa-people-group" aria-hidden="true"></i> Teamwork</span>
+                <span><i class="fa-solid fa-code" aria-hidden="true"></i> Backend web development</span>
+                <span><i class="fa-regular fa-comments" aria-hidden="true"></i> Communication</span>
+                <span><i class="fa-regular fa-lightbulb" aria-hidden="true"></i> Problem solving</span>
+                <span><i class="fa-solid fa-brain" aria-hidden="true"></i> Critical thinking</span>
+                <span><i class="fa-solid fa-handshake" aria-hidden="true"></i> Collaboration</span>
+                <span><i class="fa-solid fa-list-check" aria-hidden="true"></i> Self management</span>
+            </div>
+        </section>
+
+        <section class="projects-panel" id="work" aria-labelledby="projectsTitle">
+            <div class="section-heading section-heading-inverse">
+                <div>
+                    <span class="section-kicker">SELECTED WORK</span>
+                    <h2 id="projectsTitle">Projects built<br>with intention.</h2>
+                </div>
+                <a class="text-link text-link-light" href="https://github.com/mparuk" target="_blank" rel="noopener noreferrer">All repositories <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+            <div class="project-grid">
+                <article class="work-card">
+                    <div class="work-card-top"><span class="work-index">01 / WEB</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                    <div class="work-symbol symbol-sky"><i class="fa-solid fa-dragon" aria-hidden="true"></i></div>
+                    <h3>DinoVerse Web</h3>
+                    <p>A dinosaur-themed frontend with concise learning content and a basic connection to a Unity app through barcode scanning.</p>
+                    <div class="tag-list"><span>HTML</span><span>CSS</span></div>
+                    <a class="work-link" href="https://github.com/mparuk/DinoVerse_Web" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+                <article class="work-card">
+                    <div class="work-card-top"><span class="work-index">02 / BACKEND</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                    <div class="work-symbol symbol-lime"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></div>
+                    <h3>Sweet Shop E-Commerce Backend</h3>
+                    <p>A Laravel shop backend with role-based access, product management, cart and checkout, stock updates, order history, and profile management.</p>
+                    <div class="tag-list"><span>Laravel 12</span><span>PHP 8.3</span><span>MySQL</span><span>Bootstrap 5</span><span>Breeze Auth</span></div>
+                    <a class="work-link" href="https://github.com/mparuk/Final-Project-BNCC-Backend" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+                <article class="work-card">
+                    <div class="work-card-top"><span class="work-index">03 / MACHINE LEARNING</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                    <div class="work-symbol symbol-violet"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                    <h3>AI Food Recommendation System</h3>
+                    <p>Recommends restaurants in and around Malang using location, distance, ratings, and review counts with K-Nearest Neighbors.</p>
+                    <div class="tag-list"><span>Python</span><span>Scikit-learn</span><span>KNN</span><span>Pandas</span><span>NumPy</span><span>Geopy</span><span>OpenStreetMap</span><span>Geoapify API</span></div>
+                    <a class="work-link" href="https://github.com/mparuk/Food_Recommender_ML_System" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+                <article class="work-card">
+                    <div class="work-card-top"><span class="work-index">04 / COLLABORATION</span><span class="status-label"><i></i> In progress</span></div>
+                    <div class="work-symbol symbol-blue"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i></div>
+                    <h3>ResQ</h3>
+                    <p>A work-in-progress project. I’m involved as a backend developer collaborator.</p>
+                    <div class="tag-list"><span>Kotlin</span><span>Android</span><span>Jetpack Compose</span></div>
+                    <a class="work-link" href="https://github.com/alfisfathoni/ResQ" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <section class="experience-section" id="experience" aria-labelledby="experienceTitle">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">ORGANIZATION &amp; COMMUNITY</span>
+                    <h2 id="experienceTitle">Learning through<br>being involved.</h2>
+                </div>
+                <p class="section-note">My time with BNCC’s Learning and Training division has helped me learn through classes, projects, and organizing together.</p>
+            </div>
+            <div class="experience-layout">
+                <div class="experience-copy">
+                    <span class="soft-pill">BNCC · MALANG · 2024—PRESENT</span>
+                    <h3>Bina Nusantara<br>Computer Club</h3>
+                    <p>From learning backend development to helping organize LnT classes, each experience has given me a chance to grow with the people around me.</p>
+                    <div class="experience-facts">
+                        <div><strong>4</strong><span>BNCC roles</span></div>
+                        <div><strong>2</strong><span>class projects</span></div>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
-                <div class="col-lg-2 col-md-6 text-start">
-                    <h5 class="fw-bold mb-4"
-                        style="color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem;">
-                        > Navigation</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#home">// home</a></li>
-                        <li class="mb-2"><a href="#work">// projects</a></li>
-                        <li class="mb-2"><a href="#experience">// experience</a></li>
-                        <li class="mb-2"><a href="#certifications">// certs</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="col-lg-3 col-md-6 text-start">
-                    <h5 class="fw-bold mb-4"
-                        style="color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem;">
-                        > Contact</h5>
-                    <ul class="list-unstyled text-dim small footer-contact">
-                        <li class="mb-3 d-flex align-items-center gap-3">
-                            <i class="fas fa-map-marker-alt" style="color: var(--accent-purple);"></i>
-                            <span>Malang, Indonesia</span>
-                        </li>
-                        <li class="mb-3 d-flex align-items-center gap-3">
-                            <i class="fas fa-university" style="color: var(--accent-purple);"></i>
-                            <span>BINUS University</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Status / CTA -->
-                <div class="col-lg-3 col-md-6 text-start">
-                    <div class="project-card p-4 h-auto"
-                        style="background: rgba(10, 255, 96, 0.02); border-color: rgba(10, 255, 96, 0.2);">
-                        <h6 class="fw-bold text-white mb-2">Ready to collaborate?</h6>
-                        <p class="text-dim small mb-4">Let's build something amazing together.</p>
-                        <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank"
-                            class="btn btn-hire w-100 text-center">Initialize_Contact()</a>
-                    </div>
+                <div class="activity-gallery" aria-label="Photos from BNCC activities">
+                    <figure class="activity-photo activity-photo-main"><img src="assets/org-photo-1.jpg" alt="Muhammad Paruk at a BNCC activity"></figure>
+                    <figure class="activity-photo activity-photo-wide"><img src="assets/org-photo-2.jpg" alt="BNCC team activity"></figure>
+                    <figure class="activity-photo"><img src="assets/org-photo-3.jpg" alt="BNCC event"></figure>
+                    <figure class="activity-photo"><img src="assets/org-photo-4.jpg" alt="Learning and Training activity"></figure>
+                    <figure class="activity-photo activity-photo-banner"><img src="assets/org-photo-5.JPEG" alt="BNCC community activity"></figure>
                 </div>
             </div>
+        </section>
 
-            <!-- Copyright Bar -->
-            <div
-                class="footer-bottom border-top pt-4 pb-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <p class="text-dim mb-3 mb-md-0 small" style="font-family: 'JetBrains Mono', monospace;">
-                    © 2026 Muhammad Paruk. All rights reserved.
-                </p>
-                <div class="d-flex align-items-center gap-2 text-dim small"
-                    style="font-family: 'JetBrains Mono', monospace;">
-                    <span class="status-dot mb-0" style="width: 8px; height: 8px; margin-right: 5px;"></span>
-                    System Status: <span style="color:var(--accent-green)">Operational</span>
+        <section class="certificates-section" id="certifications" aria-labelledby="certTitle">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">MILESTONES &amp; LEARNING</span>
+                    <h2 id="certTitle">Certificates</h2>
+                </div>
+                <div class="carousel-controls" aria-label="Certificate navigation">
+                    <button type="button" data-cert-scroll="-1" aria-label="Previous certificates"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" data-cert-scroll="1" aria-label="Next certificates"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
-        </div>
-    </footer>
+            <div class="certificate-track" id="certificateTrack" tabindex="0" role="region" aria-label="Certificates. Scroll horizontally to see all.">
+                <article class="certificate-card"><h3>Back-End Development Class</h3><p>High Distinction</p><img src="assets/cert-backend.jpg" alt="Back-End Development Class High Distinction certificate" loading="lazy"></article>
+                <article class="certificate-card"><h3>Technology Project Member</h3><p>Back-End Course</p><img src="assets/cert-tpm.jpg" alt="Technology Project Member Back-End Course certificate" loading="lazy"></article>
+                <article class="certificate-card"><h3>C Programming</h3><p>Certificate</p><img src="assets/cert-c.jpg" alt="C programming certificate" loading="lazy"></article>
+                <article class="certificate-card"><h3>UI/UX Design Mentor</h3><p>Mentor Certificate</p><img src="assets/cert-mentor.jpg" alt="UI/UX design mentor certificate" loading="lazy"></article>
+                <article class="certificate-card"><h3>UI/UX Competition Participant</h3><p>ISFEST 2025 · Certificate of Appreciation</p><iframe src="assets/cert-lomba1.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of Appreciation for participating in the UI/UX Competition at ISFEST 2025" loading="lazy"></iframe><a href="assets/cert-lomba1.pdf" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+                <article class="certificate-card"><h3>UI/UX Participant</h3><p>Technoday 2025</p><iframe src="assets/cert-lomba2.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of participation in the UI/UX event at Technoday 2025" loading="lazy"></iframe><a href="assets/cert-lomba2.pdf" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+            </div>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+        <footer class="site-footer" id="contact">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a class="brand brand-footer" href="#home">M<span>.</span>PARUK</a>
+                    <p>Building code, solving problems, and creating digital experiences.</p>
+                    <a class="pill-link pill-link-light" href="https://www.linkedin.com/in/muhammadparuk" target="_blank" rel="noopener noreferrer">Let’s connect <span class="arrow-circle"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-label">EXPLORE</span>
+                    <a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certificates</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-label">FIND ME</span>
+                    <a href="https://github.com/mparuk" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammadparuk" target="_blank" rel="noopener noreferrer">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/mhfarukz_" target="_blank" rel="noopener noreferrer">Instagram <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Muhammad Paruk</span><span>Malang, Indonesia · BINUS University</span><a href="#home">Back to top ↑</a></div>
+        </footer>
+    </main>
 
     <script>
-        /* ============================================================
-           PRELOADER — terminal boot sequence
-           ============================================================ */
-        (function () {
-            const preloader = document.getElementById('preloader');
-            const bar = document.getElementById('preloader-bar');
+        const loader = document.getElementById('pageLoader');
+        const finishIntro = () => {
+            requestAnimationFrame(() => document.body.classList.add('page-entered'));
+            window.setTimeout(() => loader.classList.add('is-hidden'), 120);
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', finishIntro, { once: true });
+        } else {
+            finishIntro();
+        }
 
-            // Terminal messages to type out
-            const messages = [
-                { el: 'line1', html: '<span class="prompt">$</span><span class="cmd"> boot portfolio.sh</span>' },
-                { el: 'line2', html: '<span class="prompt">✓</span><span class="success"> modules loaded &nbsp;&mdash;&nbsp; OK</span>' },
-                { el: 'line3', html: '<span class="prompt">✓</span><span class="success"> assets fetched &nbsp;&mdash;&nbsp; OK</span>' },
-                { el: 'line4', html: '<span class="prompt">→</span> <span class="warn">Launching &lt;paruk.dev /&gt;...</span>' },
-            ];
+        const themeToggle = document.getElementById('themeToggle');
+        function applyTheme(theme) {
+            const dark = theme === 'dark';
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+            themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+            themeToggle.innerHTML = '<i class="fa-regular ' + (dark ? 'fa-sun' : 'fa-moon') + '" aria-hidden="true"></i>';
+            try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); } catch {}
+        }
+        applyTheme(document.documentElement.dataset.theme || 'light');
+        themeToggle.addEventListener('click', () => {
+            applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+        });
 
-            let barPct = 0;
-            let barTimer = null;
+        const menuToggle = document.getElementById('menuToggle');
+        const navigation = document.getElementById('siteNavigation');
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navigation.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        });
+        navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            navigation.classList.remove('is-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation');
+        }));
 
-            // Smoothly animate the progress bar to a target %
-            function animateBar(target, duration) {
-                const start = barPct;
-                const distance = target - start;
-                const steps = Math.round(duration / 16);
-                let step = 0;
-                clearInterval(barTimer);
-                barTimer = setInterval(() => {
-                    step++;
-                    barPct = start + distance * (step / steps);
-                    bar.style.width = barPct + '%';
-                    if (step >= steps) { barPct = target; clearInterval(barTimer); }
-                }, 16);
-            }
-
-            // Type a line character by character, then resolve
-            function typeLine(id, html, speed) {
-                return new Promise(resolve => {
-                    const el = document.getElementById(id);
-                    const plain = html.replace(/<[^>]+>/g, ''); // strip tags for typing
-                    let i = 0;
-                    el.innerHTML = '';
-                    const iv = setInterval(() => {
-                        i++;
-                        // Show partial plain text then full HTML when done
-                        if (i < plain.length) {
-                            el.textContent = plain.substring(0, i);
-                        } else {
-                            el.innerHTML = html;
-                            clearInterval(iv);
-                            resolve();
-                        }
-                    }, speed);
-                });
-            }
-
-            async function runSequence() {
-                animateBar(20, 400);
-
-                await typeLine(messages[0].el, messages[0].html, 14);
-                await new Promise(r => setTimeout(r, 50));
-                animateBar(50, 180);
-
-                await typeLine(messages[1].el, messages[1].html, 12);
-                await new Promise(r => setTimeout(r, 35));
-                animateBar(72, 150);
-
-                await typeLine(messages[2].el, messages[2].html, 12);
-                await new Promise(r => setTimeout(r, 35));
-                animateBar(90, 130);
-
-                await typeLine(messages[3].el, messages[3].html, 14);
-                await new Promise(r => setTimeout(r, 70));
-                animateBar(100, 180);
-
-                await new Promise(r => setTimeout(r, 120));
-
-                // Phase 1: fade out terminal text
-                preloader.classList.add('dismissing');
-                await new Promise(r => setTimeout(r, 180));
-
-                // Phase 2: curtains split open
-                preloader.classList.add('hidden');
-
-                // Phase 3: page content fades up
-                document.body.classList.add('page-ready');
-
-                // Cleanup after curtain animation.
-                await new Promise(r => setTimeout(r, 700));
-                preloader.classList.add('gone');
-            }
-
-            runSequence();
-        })();
-
-        /* ============================================================
-           MAIN INIT — runs after preloader (AOS, Typed, VanillaTilt)
-           ============================================================ */
         const certificateTrack = document.getElementById('certificateTrack');
         document.querySelectorAll('[data-cert-scroll]').forEach(button => {
             button.addEventListener('click', () => {
-                const firstSlide = certificateTrack.querySelector('.cert-slide');
-                const slideWidth = firstSlide.getBoundingClientRect().width;
-                const gap = parseFloat(getComputedStyle(certificateTrack).columnGap) || 0;
+                const card = certificateTrack.querySelector('.certificate-card');
+                const gap = parseFloat(getComputedStyle(certificateTrack).gap) || 0;
                 certificateTrack.scrollBy({
-                    left: Number(button.dataset.certScroll) * (slideWidth + gap),
+                    left: (card.getBoundingClientRect().width + gap) * Number(button.dataset.certScroll),
                     behavior: 'smooth'
                 });
             });
         });
 
-        AOS.init({ once: true, offset: 50, duration: 800 });
-
-        new Typed('#typed-output', {
-            strings: ['Web Dev Enthusiast', 'Backend Engineer Enthusiast', 'Software Engineer Enthusiast', 'BINUSIAN'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true,
-            backDelay: 2000
+        document.querySelectorAll('.journey-item').forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (item.open) document.querySelectorAll('.journey-item').forEach(other => {
+                    if (other !== item) other.open = false;
+                });
+            });
         });
 
-        VanillaTilt.init(document.querySelector(".photo-container"), {
-            max: 10,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.1,
-        });
+        const revealSelector = [
+            '.about-panel > *', '.skills-strip > *', '.projects-panel > .section-heading',
+            '.work-card', '.experience-section > .section-heading', '.experience-copy',
+            '.activity-photo', '.certificates-section > .section-heading', '.certificate-card',
+            '.footer-main > *', '.footer-bottom'
+        ].join(',');
+        const revealItems = Array.from(document.querySelectorAll(revealSelector));
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            document.body.classList.add('has-scroll-reveal');
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+            revealItems.forEach(item => {
+                item.classList.add('reveal-item');
+                revealObserver.observe(item);
+            });
+        } else {
+            revealItems.forEach(item => item.classList.add('is-visible'));
+        }
     </script>
 </body>
-
 </html>
