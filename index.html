@@ -29,7 +29,7 @@
     </div>
 
     <main class="site-shell">
-        <header class="site-header">
+        <header class="site-header" id="siteHeader">
             <a class="brand" href="#home" aria-label="Muhammad Paruk, back to top">M<span>.</span>PARUK</a>
             <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavigation">
                 <span></span><span></span>
@@ -44,6 +44,7 @@
                     <i class="fa-regular fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
+            <span class="scroll-progress" id="scrollProgress" aria-hidden="true"></span>
         </header>
 
         <section class="hero" id="home" aria-labelledby="heroTitle">
@@ -145,8 +146,16 @@
                 </div>
                 <a class="text-link text-link-light" href="https://github.com/mparuk" target="_blank" rel="noopener noreferrer">All repositories <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
+            <div class="project-filters" role="group" aria-label="Filter projects">
+                <button type="button" class="project-filter is-active" data-project-filter="all" aria-pressed="true">All <span>4</span></button>
+                <button type="button" class="project-filter" data-project-filter="web" aria-pressed="false">Web <span>1</span></button>
+                <button type="button" class="project-filter" data-project-filter="backend" aria-pressed="false">Backend <span>1</span></button>
+                <button type="button" class="project-filter" data-project-filter="data" aria-pressed="false">Data &amp; AI <span>1</span></button>
+                <button type="button" class="project-filter" data-project-filter="collaboration" aria-pressed="false">Collaboration <span>1</span></button>
+            </div>
+            <p class="visually-hidden" id="projectFilterStatus" aria-live="polite">Showing all 4 projects.</p>
             <div class="project-grid">
-                <article class="work-card">
+                <article class="work-card" data-project-category="web">
                     <div class="work-card-top"><span class="work-index">01 / WEB</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                     <div class="work-symbol symbol-sky"><i class="fa-solid fa-dragon" aria-hidden="true"></i></div>
                     <h3>DinoVerse Web</h3>
@@ -154,7 +163,7 @@
                     <div class="tag-list"><span>HTML</span><span>CSS</span></div>
                     <a class="work-link" href="https://github.com/mparuk/DinoVerse_Web" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
-                <article class="work-card">
+                <article class="work-card" data-project-category="backend">
                     <div class="work-card-top"><span class="work-index">02 / BACKEND</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                     <div class="work-symbol symbol-lime"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></div>
                     <h3>Sweet Shop E-Commerce Backend</h3>
@@ -162,7 +171,7 @@
                     <div class="tag-list"><span>Laravel 12</span><span>PHP 8.3</span><span>MySQL</span><span>Bootstrap 5</span><span>Breeze Auth</span></div>
                     <a class="work-link" href="https://github.com/mparuk/Final-Project-BNCC-Backend" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
-                <article class="work-card">
+                <article class="work-card" data-project-category="data">
                     <div class="work-card-top"><span class="work-index">03 / MACHINE LEARNING</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                     <div class="work-symbol symbol-violet"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
                     <h3>AI Food Recommendation System</h3>
@@ -170,7 +179,7 @@
                     <div class="tag-list"><span>Python</span><span>Scikit-learn</span><span>KNN</span><span>Pandas</span><span>NumPy</span><span>Geopy</span><span>OpenStreetMap</span><span>Geoapify API</span></div>
                     <a class="work-link" href="https://github.com/mparuk/Food_Recommender_ML_System" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
-                <article class="work-card">
+                <article class="work-card" data-project-category="collaboration">
                     <div class="work-card-top"><span class="work-index">04 / COLLABORATION</span><span class="status-label"><i></i> In progress</span></div>
                     <div class="work-symbol symbol-blue"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i></div>
                     <h3>ResQ</h3>
@@ -200,11 +209,11 @@
                     </div>
                 </div>
                 <div class="activity-gallery" aria-label="Photos from BNCC activities">
-                    <figure class="activity-photo activity-photo-main"><img src="assets/org-photo-1.jpg" alt="Muhammad Paruk at a BNCC activity"></figure>
-                    <figure class="activity-photo activity-photo-wide"><img src="assets/org-photo-2.jpg" alt="BNCC team activity"></figure>
-                    <figure class="activity-photo"><img src="assets/org-photo-3.jpg" alt="BNCC event"></figure>
-                    <figure class="activity-photo"><img src="assets/org-photo-4.jpg" alt="Learning and Training activity"></figure>
-                    <figure class="activity-photo activity-photo-banner"><img src="assets/org-photo-5.JPEG" alt="BNCC community activity"></figure>
+                    <figure class="activity-photo activity-photo-main"><button class="image-preview" type="button" data-lightbox-src="assets/org-photo-1.jpg" data-lightbox-alt="Muhammad Paruk at a BNCC activity" data-lightbox-title="BNCC activity" aria-label="View photo: Muhammad Paruk at a BNCC activity"><img src="assets/org-photo-1.jpg" alt="" loading="lazy"></button></figure>
+                    <figure class="activity-photo activity-photo-wide"><button class="image-preview" type="button" data-lightbox-src="assets/org-photo-2.jpg" data-lightbox-alt="BNCC team activity" data-lightbox-title="BNCC team activity" aria-label="View photo: BNCC team activity"><img src="assets/org-photo-2.jpg" alt="" loading="lazy"></button></figure>
+                    <figure class="activity-photo"><button class="image-preview" type="button" data-lightbox-src="assets/org-photo-3.jpg" data-lightbox-alt="BNCC event" data-lightbox-title="BNCC event" aria-label="View photo: BNCC event"><img src="assets/org-photo-3.jpg" alt="" loading="lazy"></button></figure>
+                    <figure class="activity-photo"><button class="image-preview" type="button" data-lightbox-src="assets/org-photo-4.jpg" data-lightbox-alt="Learning and Training activity" data-lightbox-title="Learning and Training activity" aria-label="View photo: Learning and Training activity"><img src="assets/org-photo-4.jpg" alt="" loading="lazy"></button></figure>
+                    <figure class="activity-photo activity-photo-banner"><button class="image-preview" type="button" data-lightbox-src="assets/org-photo-5.JPEG" data-lightbox-alt="BNCC community activity" data-lightbox-title="BNCC community activity" aria-label="View photo: BNCC community activity"><img src="assets/org-photo-5.JPEG" alt="" loading="lazy"></button></figure>
                 </div>
             </div>
         </section>
@@ -221,10 +230,10 @@
                 </div>
             </div>
             <div class="certificate-track" id="certificateTrack" tabindex="0" role="region" aria-label="Certificates. Scroll horizontally to see all.">
-                <article class="certificate-card"><h3>Back-End Development Class</h3><p>High Distinction</p><img src="assets/cert-backend.jpg" alt="Back-End Development Class High Distinction certificate" loading="lazy"></article>
-                <article class="certificate-card"><h3>Technology Project Member</h3><p>Back-End Course</p><img src="assets/cert-tpm.jpg" alt="Technology Project Member Back-End Course certificate" loading="lazy"></article>
-                <article class="certificate-card"><h3>C Programming</h3><p>Certificate</p><img src="assets/cert-c.jpg" alt="C programming certificate" loading="lazy"></article>
-                <article class="certificate-card"><h3>UI/UX Design Mentor</h3><p>Mentor Certificate</p><img src="assets/cert-mentor.jpg" alt="UI/UX design mentor certificate" loading="lazy"></article>
+                <article class="certificate-card"><h3>Back-End Development Class</h3><p>High Distinction</p><button class="image-preview certificate-preview" type="button" data-lightbox-src="assets/cert-backend.jpg" data-lightbox-alt="Back-End Development Class High Distinction certificate" data-lightbox-title="Back-End Development Class" aria-label="View larger certificate: Back-End Development Class"><img src="assets/cert-backend.jpg" alt="" loading="lazy"></button></article>
+                <article class="certificate-card"><h3>Technology Project Member</h3><p>Back-End Course</p><button class="image-preview certificate-preview" type="button" data-lightbox-src="assets/cert-tpm.jpg" data-lightbox-alt="Technology Project Member Back-End Course certificate" data-lightbox-title="Technology Project Member" aria-label="View larger certificate: Technology Project Member"><img src="assets/cert-tpm.jpg" alt="" loading="lazy"></button></article>
+                <article class="certificate-card"><h3>C Programming</h3><p>Certificate</p><button class="image-preview certificate-preview" type="button" data-lightbox-src="assets/cert-c.jpg" data-lightbox-alt="C programming certificate" data-lightbox-title="C Programming" aria-label="View larger certificate: C Programming"><img src="assets/cert-c.jpg" alt="" loading="lazy"></button></article>
+                <article class="certificate-card"><h3>UI/UX Design Mentor</h3><p>Mentor Certificate</p><button class="image-preview certificate-preview" type="button" data-lightbox-src="assets/cert-mentor.jpg" data-lightbox-alt="UI/UX design mentor certificate" data-lightbox-title="UI/UX Design Mentor" aria-label="View larger certificate: UI/UX Design Mentor"><img src="assets/cert-mentor.jpg" alt="" loading="lazy"></button></article>
                 <article class="certificate-card"><h3>UI/UX Competition Participant</h3><p>ISFEST 2025 · Certificate of Appreciation</p><iframe src="assets/cert-lomba1.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of Appreciation for participating in the UI/UX Competition at ISFEST 2025" loading="lazy"></iframe><a href="assets/cert-lomba1.pdf" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
                 <article class="certificate-card"><h3>UI/UX Participant</h3><p>Technoday 2025</p><iframe src="assets/cert-lomba2.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Certificate of participation in the UI/UX event at Technoday 2025" loading="lazy"></iframe><a href="assets/cert-lomba2.pdf" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
             </div>
@@ -251,6 +260,12 @@
             <div class="footer-bottom"><span>© 2026 Muhammad Paruk</span><span>Malang, Indonesia · BINUS University</span><a href="#home">Back to top ↑</a></div>
         </footer>
     </main>
+
+    <dialog class="image-dialog" id="imageDialog" aria-labelledby="imageDialogTitle">
+        <button class="dialog-close" id="imageDialogClose" type="button" aria-label="Close image preview"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="dialog-image-wrap"><img id="imageDialogImage" src="" alt=""></div>
+        <h2 id="imageDialogTitle"></h2>
+    </dialog>
 
     <script>
         const loader = document.getElementById('pageLoader');
@@ -290,6 +305,97 @@
             menuToggle.setAttribute('aria-label', 'Open navigation');
         }));
 
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && navigation.classList.contains('is-open')) {
+                navigation.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Open navigation');
+                menuToggle.focus();
+            }
+        });
+
+        const projectFilters = Array.from(document.querySelectorAll('[data-project-filter]'));
+        const projectCards = Array.from(document.querySelectorAll('[data-project-category]'));
+        const projectFilterStatus = document.getElementById('projectFilterStatus');
+        projectFilters.forEach(button => button.addEventListener('click', () => {
+            const filter = button.dataset.projectFilter;
+            projectFilters.forEach(filterButton => {
+                const isActive = filterButton === button;
+                filterButton.classList.toggle('is-active', isActive);
+                filterButton.setAttribute('aria-pressed', String(isActive));
+            });
+            projectCards.forEach(card => {
+                card.hidden = filter !== 'all' && card.dataset.projectCategory !== filter;
+            });
+            const visibleCount = projectCards.filter(card => !card.hidden).length;
+            const selectedLabel = button.childNodes[0].textContent.trim();
+            projectFilterStatus.textContent = filter === 'all'
+                ? `Showing all ${visibleCount} projects.`
+                : `Showing ${visibleCount} ${selectedLabel} ${visibleCount === 1 ? 'project' : 'projects'}.`;
+        }));
+
+        const imageDialog = document.getElementById('imageDialog');
+        const imageDialogImage = document.getElementById('imageDialogImage');
+        const imageDialogTitle = document.getElementById('imageDialogTitle');
+        const imageDialogClose = document.getElementById('imageDialogClose');
+        document.querySelectorAll('[data-lightbox-src]').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                imageDialogImage.src = trigger.dataset.lightboxSrc;
+                imageDialogImage.alt = trigger.dataset.lightboxAlt || '';
+                imageDialogTitle.textContent = trigger.dataset.lightboxTitle || 'Image preview';
+                imageDialog.showModal();
+            });
+        });
+        imageDialogClose.addEventListener('click', () => imageDialog.close());
+        imageDialog.addEventListener('click', event => {
+            if (event.target === imageDialog) imageDialog.close();
+        });
+
+        const siteHeader = document.getElementById('siteHeader');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const sectionLinks = Array.from(navigation.querySelectorAll('a[href^="#"]'));
+        const navSections = sectionLinks.map(link => document.querySelector(link.hash)).filter(Boolean);
+        let scrollUpdatePending = false;
+        const updateScrollUi = () => {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollableHeight > 0 ? Math.min(1, window.scrollY / scrollableHeight) : 0;
+            scrollProgress.style.transform = `scaleX(${progress})`;
+            siteHeader.classList.toggle('is-scrolled', window.scrollY > 14);
+            const activationLine = siteHeader.getBoundingClientRect().bottom + window.innerHeight * .3;
+            const passedSections = navSections.filter(section => section.getBoundingClientRect().top <= activationLine);
+            const currentSection = passedSections[passedSections.length - 1];
+            sectionLinks.forEach(link => {
+                if (currentSection && link.hash === `#${currentSection.id}`) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+            scrollUpdatePending = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (scrollUpdatePending) return;
+            scrollUpdatePending = true;
+            requestAnimationFrame(updateScrollUi);
+        }, { passive: true });
+        window.addEventListener('resize', updateScrollUi, { passive: true });
+        updateScrollUi();
+
+        const portrait = document.querySelector('.hero-portrait');
+        const portraitFrame = portrait.querySelector('.portrait-frame');
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (!motionPreference.matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            portrait.addEventListener('pointermove', event => {
+                const bounds = portrait.getBoundingClientRect();
+                const x = (event.clientX - bounds.left) / bounds.width - .5;
+                const y = (event.clientY - bounds.top) / bounds.height - .5;
+                portraitFrame.style.setProperty('--tilt-x', `${x * 7}deg`);
+                portraitFrame.style.setProperty('--tilt-y', `${y * -7}deg`);
+                portraitFrame.style.setProperty('--lift-x', `${x * 5}px`);
+                portraitFrame.style.setProperty('--lift-y', `${y * 5}px`);
+            });
+            portrait.addEventListener('pointerleave', () => {
+                ['--tilt-x', '--tilt-y', '--lift-x', '--lift-y'].forEach(property => portraitFrame.style.removeProperty(property));
+            });
+        }
+
         const certificateTrack = document.getElementById('certificateTrack');
         document.querySelectorAll('[data-cert-scroll]').forEach(button => {
             button.addEventListener('click', () => {
@@ -317,7 +423,7 @@
             '.footer-main > *', '.footer-bottom'
         ].join(',');
         const revealItems = Array.from(document.querySelectorAll(revealSelector));
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reduceMotion = motionPreference.matches;
         if (!reduceMotion && 'IntersectionObserver' in window) {
             document.body.classList.add('has-scroll-reveal');
             const revealObserver = new IntersectionObserver(entries => {

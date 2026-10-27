@@ -11,9 +11,12 @@ This portfolio is built with plain HTML, CSS, and JavaScript. Its editorial layo
 ## Features
 
 - Responsive navigation with a compact menu on smaller screens
+- Sticky navigation with the active section and page reading progress indicated while scrolling
 - Light and dark themes, with the selected theme saved in the browser
 - Introduction, skills, projects, organization experience, and certificate sections
-- Expandable experience entries and a horizontally scrollable certificate gallery
+- Project category filters, expandable experience entries, and a horizontally scrollable certificate gallery
+- Full-size previews for activity photos and image certificates
+- Subtle pointer response on the hero portrait
 - Subtle page entrance and scroll reveal animations
 - Reduced-motion support for visitors who prefer fewer animations
 - Accessible labels and alternative text for interactive controls and images
