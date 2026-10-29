@@ -289,6 +289,28 @@ img { display: block; max-width: 100%; }
 }
 .text-link i { font-size: .68rem; }
 .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.cv-link {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: .76rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.cv-link:hover { transform: translateY(-2px); border-color: var(--accent-blue); }
+.cv-link-view { background: var(--surface); }
+.cv-link-view:hover { background: var(--panel-soft); }
+.cv-link-download { border-color: #101114; background: #101114; color: #fff; }
+.cv-link-download:hover { border-color: #30333a; background: #30333a; color: #fff; }
+.cv-link i { font-size: .72rem; }
 .hero-proof { display: flex; align-items: center; gap: 12px; margin-top: 36px; }
 .mini-stack { display: flex; padding-left: 3px; }
 .mini-stack span {

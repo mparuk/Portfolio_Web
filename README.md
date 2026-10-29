@@ -14,6 +14,7 @@ This portfolio is built with plain HTML, CSS, and JavaScript. Its editorial layo
 - Sticky navigation with the active section and page reading progress indicated while scrolling
 - Light and dark themes, with the selected theme saved in the browser
 - Introduction, skills, projects, organization experience, and certificate sections
+- CV viewing in a new tab and direct CV download
 - Project category filters, expandable experience entries, and a horizontally scrollable certificate gallery
 - Full-size previews for activity photos and image certificates
 - Subtle pointer response on the hero portrait
@@ -35,7 +36,7 @@ There is no framework, package manager, or build step. Google Fonts and Font Awe
 
 ```text
 .
-├── assets/         # Profile photo, BNCC activity photos, logo, and certificates
+├── assets/         # Profile photo, BNCC activity photos, logo, certificates, and CV
 ├── css/
 │   └── style.css   # Layout, responsive rules, themes, and animations
 ├── index.html      # Portfolio content and interaction scripts
